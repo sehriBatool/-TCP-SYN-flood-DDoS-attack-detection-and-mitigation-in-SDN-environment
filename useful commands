@@ -1,0 +1,42 @@
+commands:
+
+
+# hping3 -c 15000 -d 120 -S -w 64 -p 80 --flood --rand-source 192.168.1.159
+# dpctl dump-flows tcp:127.0.0.1:6634
+# hping3 --traceroute -V -1 www.example.com
+# hping3 -S 192.168.1.105 -p 80
+# hping3 -f 192.168.1.105 -p 80 -d 10 -E malware
+
+___________________________________________________________________________
+
+$ sudo mn --switch ovsk --test iperf
+$ sudo mn --test none
+$ sudo mn --custom ~/mininet/custom/ctopo.py --topo mytopo --switch ovsk
+$ sudo mn --custom ~/mininet/custom/ctopo.py --topo mytopo --switch ovsk --controller remote --mac
+$ sudo mn --link tc,bw=10,delay=10ms
+$ sudo mn --test pingall --topo linear,4
+$ sudo mn --test pingall --topo single,3
+$ sudo mn --test pingpair
+$ sudo mn -c
+$ sudo ~/pox/pox.py forwarding.l2_learning info.packet_dump samples.pretty_log log.level --DEBUG
+
+
+___________________________________________________________________________
+
+
+h1 ifconfig
+http://10.0.0.1:19999/api/v1/data?chart=system.cpu&format=csv
+
+
+
+
+____________________________________________________________________________
+
+mininet> h1 python -m SimpleHTTPServer 80 &
+mininet> h2 wget -O - h1
+...
+mininet> h1 kill %python
+mininet> h1 ping -c 1 h2
+
+
+

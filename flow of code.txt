@@ -1,0 +1,19 @@
+if int(timer)>=end_timer:
+	#calculate mean and standard deviation,packet 		#ratio
+	#move ip addresses into PAD
+	#tcp_syn_flows=0
+	#end_timer=int(timer)+3
+else:
+	if tcp_syn_flows>threshold_1:
+		if tcpflow =PAD:
+			timer=end_timer
+		elif ratio>threshold_2:
+			msg.pripority=42
+										 				msg.action.append(output(port=3))
+
+		else:
+			timer=end_timer
+	else:
+		tcp_syn_flow+=1
+		
+		
